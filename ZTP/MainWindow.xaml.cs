@@ -12,17 +12,33 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
 
 namespace ZTP
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow 
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        private void loginTyle_Click(object sender, RoutedEventArgs e)
+        {
+            loginFlyOut.IsOpen = true;
+        }
+
+        private void registerTile_Click(object sender, RoutedEventArgs e)
+        {
+            registerFlyOut.IsOpen = true;
         }
     }
 }

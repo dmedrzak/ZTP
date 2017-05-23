@@ -1,12 +1,126 @@
-﻿<Window x:Class="ZTP.MainWindow"
+﻿<Controls:MetroWindow x:Class="ZTP.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:ZTP"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="MainWindow" Height="350" Width="600">
+    <Grid Name="Main">
+        <Grid Name="FirstPage">
+            <Controls:Tile x:Name="loginTyle" HorizontalAlignment="Left" VerticalAlignment="Top" Width="600" Height="163" Click="loginTyle_Click" Margin="0,0,-8,0">
+                <Grid>
+                    <Image  Source="Images/login.png" Margin="-174,0,174,0"/>
+                    <Label x:Name="label" Foreground="White" Content="Login" HorizontalAlignment="Left" Margin="30,27,-117,0" VerticalAlignment="Top" Height="125" Width="249" FontSize="80"/>
+                </Grid>
+            </Controls:Tile>
+            <Controls:Tile x:Name="registerTile" Background="DarkRed" HorizontalAlignment="Left" Margin="0,157,-8,0" VerticalAlignment="Top" Width="600" Height="162" Click="registerTile_Click">
+                <Grid>
+                    <Image  Source="Images/AddUserWhite.png" Margin="-174,0,174,0"/>
+                    <Label x:Name="registerLabl" Foreground="White" Content="Register" HorizontalAlignment="Left" Margin="32,27,-170,0" VerticalAlignment="Top" Height="125" Width="300" FontSize="80"/>
+                </Grid>
+            </Controls:Tile>
+        </Grid>
+
+        <Grid>
+            <Controls:Flyout Visibility="Hidden" Header="LOGIN" Name="loginFlyOut" Position="Right" Width="600" Foreground="White" >
+                <Controls:Flyout.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.9"></SolidColorBrush>
+                </Controls:Flyout.Background>
+                <Canvas Name="loginCanvas">
+                    <Button Name="btnLogin" Content="Login" Canvas.Left="205" Canvas.Top="125" Width="200" Height="30" Foreground="White" Background="Purple" Click="btnLogin_Click"/>
+                    <Grid Canvas.Left="205" Canvas.Top="8" Width="200" Height="40" Name="UserNameGrid">
+                        <TextBox  Width="200"  VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="txtUserName" Margin="0,7"/>
+                        <TextBlock IsHitTestVisible="False" Text="Enter user name here" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="DarkGray">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=txtUserName}" Value="">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                    <Grid Canvas.Left="205" Canvas.Top="48" Width="200" Height="40" Name="PasswordGrid">
+                        <TextBox  Width="200"  VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="txtPassword" Margin="0,7"/>
+                        <TextBlock IsHitTestVisible="False" Text="Enter user name here" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="DarkGray">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=txtPassword}" Value="">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                    <Controls:ToggleSwitch  Height="40" Canvas.Left="205" Canvas.Top="85" Width="100" Foreground="White"/>
+                    <Label Content="Remember me?" Canvas.Left="310" Canvas.Top="93" Foreground="White" Width="95"/>
+                </Canvas>
+            </Controls:Flyout>
+            <Controls:Flyout Visibility="Collapsed" Header="REGISTER" Name="registerFlyOut" Position="Right" Width="600" Foreground="White" >
+                <Controls:Flyout.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.9"></SolidColorBrush>
+                </Controls:Flyout.Background>
+                <Canvas Name="registerCanvas">
+                    <Grid Canvas.Left="205" Canvas.Top="8" Width="200" Height="40" Name="registerUserNameGrid">
+                        <TextBox  Width="200"  VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="txtRegisterUserName" Margin="0,7"/>
+                        <TextBlock IsHitTestVisible="False" Text="Enter login here" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="DarkGray">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=txtRegisterUserName}" Value="">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                    <Grid Canvas.Left="205" Canvas.Top="41" Width="200" Height="40" Name="registerPasswordGrid">
+                        <TextBox  Width="200"  VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="txtRegisterPassword" Margin="0,7"/>
+                        <TextBlock IsHitTestVisible="False" Text="Enter password here" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="DarkGray">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=txtRegisterPassword}" Value="">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                    <Grid Canvas.Left="205" Canvas.Top="74" Width="200" Height="40" Name="registerConfirmPasswordGrid">
+                        <TextBox  Width="200"  VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="txtRegisterConfirmPassword" Margin="0,7"/>
+                        <TextBlock IsHitTestVisible="False" Text="Confirm password here" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="DarkGray">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=txtRegisterConfirmPassword}" Value="">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                    <Button Name="btnRegister" Content="Register" Canvas.Left="205" Canvas.Top="114" Width="200" Height="30" Foreground="White" Background="Purple" Click="btnLogin_Click"/>
+                </Canvas>
+             </Controls:Flyout>
+        </Grid>
+
     </Grid>
-</Window>
+
+
+
+</Controls:MetroWindow>
