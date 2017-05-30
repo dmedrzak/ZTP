@@ -109,9 +109,9 @@
     <Compile Include="Migrations\201705231248503_User, Settings, VirtualWaller Models Added.Designer.cs">
       <DependentUpon>201705231248503_User, Settings, VirtualWaller Models Added.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705292146480_Settings model changed.cs" />
-    <Compile Include="Migrations\201705292146480_Settings model changed.Designer.cs">
-      <DependentUpon>201705292146480_Settings model changed.cs</DependentUpon>
+    <Compile Include="Migrations\201705300800583_Settings Model changed.cs" />
+    <Compile Include="Migrations\201705300800583_Settings Model changed.Designer.cs">
+      <DependentUpon>201705300800583_Settings Model changed.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Error.cs" />
@@ -136,8 +136,8 @@
     <EmbeddedResource Include="Migrations\201705231248503_User, Settings, VirtualWaller Models Added.resx">
       <DependentUpon>201705231248503_User, Settings, VirtualWaller Models Added.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705292146480_Settings model changed.resx">
-      <DependentUpon>201705292146480_Settings model changed.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705300800583_Settings Model changed.resx">
+      <DependentUpon>201705300800583_Settings Model changed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

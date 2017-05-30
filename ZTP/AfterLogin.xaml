@@ -60,14 +60,14 @@
                 </TabItem>
                 <TabItem Header="Notifications" Height="39" VerticalAlignment="Top">
                     <Grid Background="Transparent">
-                        <Controls:ToggleSwitch Name="SwitchNotificationsAfterBought" Margin="10,17,682,394" Foreground="White" />
+                        <Controls:ToggleSwitch Name="SwitchNotificationsAfterBought" IsChecked="{Binding NotificationAfterBought, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" Margin="10,17,682,394" Foreground="White" Click="SwitchNotificationsAfterBought_Click" />
                         <Label Content="Show notification after bought action?" FontSize="20" Foreground="White" Margin="110,17,329,394"></Label>
-                        <Controls:ToggleSwitch x:Name="SwitchNotificationsAfterSold" Margin="10,61,682,350" Foreground="White" />
+                        <Controls:ToggleSwitch x:Name="SwitchNotificationsAfterSold" IsChecked="{Binding NotificationAfterSold, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" Margin="10,61,682,350" Foreground="White" Click="SwitchNotificationsAfterSold_Click" />
                         <Label Content="Show notification after sold action?" FontSize="20" Foreground="White" Margin="110,61,329,350"/>
-                        <Controls:ToggleSwitch x:Name="SwitchNotificationsAfterSendReport" Margin="10,105,682,306" Foreground="White" />
+                        <Controls:ToggleSwitch x:Name="SwitchNotificationsAfterSendReport" IsChecked="{Binding NotificationAfterSendReports, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" Margin="10,105,682,306" Foreground="White" Click="SwitchNotificationsAfterSendReport_Click" />
                         <Label Content="Show notification after send report?" FontSize="20" Foreground="White" Margin="110,105,329,306"/>
-                        <Controls:ToggleSwitch x:Name="SwitchNotificationsAfterProvisionWasChanged" Margin="10,149,682,262" Foreground="White" />
-                        <Label Content="Show notification after provision was changed?" FontSize="20" Foreground="White" Margin="110,149,329,262"/>
+                        <Controls:ToggleSwitch x:Name="SwitchNotificationsAfterProvisionWasChanged" IsChecked="{Binding NotificationAfterProvisionChanged, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" Margin="10,149,682,262" Foreground="White" Click="SwitchNotificationsAfterProvisionWasChanged_Click" />
+                        <Label Content="Show notification after provision was changed?" FontSize="20" Foreground="White" Margin="110,149,244,262"/>
 
                     </Grid>
                 </TabItem>

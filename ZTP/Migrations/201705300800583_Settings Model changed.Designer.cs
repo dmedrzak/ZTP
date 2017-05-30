@@ -7,13 +7,13 @@ namespace ZTP.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Settingsmodelchanged : IMigrationMetadata
+    public sealed partial class SettingsModelchanged : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Settingsmodelchanged));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(SettingsModelchanged));
         
         string IMigrationMetadata.Id
         {
-            get { return "201705292146480_Settings model changed"; }
+            get { return "201705300800583_Settings Model changed"; }
         }
         
         string IMigrationMetadata.Source

@@ -28,6 +28,10 @@ namespace ZTP.Controllers
                 notifications.SoundWhenActionWasSoldNotification = CurrentUserSettings.SoundWhenActionWasSold;
                 notifications.SoundWhenEmailWasSendNotification = CurrentUserSettings.SoundWhenEmailWasSend;
                 notifications.SoundWhenPercentageWasChangedNotification = CurrentUserSettings.SoundWhenPercentageWasChanged;
+                notifications.NotificationAfterBought = CurrentUserSettings.NotificationAfterBought;
+                notifications.NotificationAfterSold = CurrentUserSettings.NotificationAfterSold;
+                notifications.NotificationAfterSendReports = CurrentUserSettings.NotificationAfterSendReport;
+                notifications.NotificationAfterProvisionChanged = CurrentUserSettings.NotificationAfterProvisionChanged;
             }
         }
 

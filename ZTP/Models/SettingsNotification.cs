@@ -13,10 +13,15 @@ namespace ZTP.Models
     {
         private bool isUpdatenEvery;
         private string updateEveryMinuts = "30";
-        private bool soundWhenActionWasSold { get; set; }
-        private bool soundWhenActionWasBought { get; set; }
-        private bool soundWhenEmailWasSend { get; set; }
-        private bool soundWhenPercentageWasChanged { get; set; }
+        private bool _soundWhenActionWasSold { get; set; }
+        private bool _soundWhenActionWasBought { get; set; }
+        private bool _soundWhenEmailWasSend { get; set; }
+        private bool _soundWhenPercentageWasChanged { get; set; }
+        private bool _notificationAfterBought { get; set; }
+        private bool _notificationAfterSold { get; set; }
+        private bool _notificationAfterReports { get; set; }
+        private bool _notificationAfterProvisionChanged { get; set; }
+
         public bool SwitchUpdateEveryMinNotification
         {
             get { return this.isUpdatenEvery; }
@@ -37,38 +42,74 @@ namespace ZTP.Models
         }
         public bool SoundWhenActionWasSoldNotification
         {
-            get { return this.soundWhenActionWasSold; }
+            get { return this._soundWhenActionWasSold; }
             set
             {
-                soundWhenActionWasSold = value;
+                _soundWhenActionWasSold = value;
                 OnPropertyChanged("SoundWhenActionWasSoldNotification");
             }
         }
         public bool SoundWhenActionWasBoughtNotification
         {
-            get { return this.soundWhenActionWasBought; }
+            get { return this._soundWhenActionWasBought; }
             set
             {
-                soundWhenActionWasBought = value;
+                _soundWhenActionWasBought = value;
                 OnPropertyChanged("SoundWhenActionWasBoughtNotification");
             }
         }
         public bool SoundWhenEmailWasSendNotification
         {
-            get { return this.soundWhenEmailWasSend; }
+            get { return this._soundWhenEmailWasSend; }
             set
             {
-                soundWhenEmailWasSend = value;
+                _soundWhenEmailWasSend = value;
                 OnPropertyChanged("SoundWhenEmailWasSendNotification");
             }
         }
         public bool SoundWhenPercentageWasChangedNotification
         {
-            get { return this.soundWhenPercentageWasChanged; }
+            get { return this._soundWhenPercentageWasChanged; }
             set
             {
-                soundWhenPercentageWasChanged = value;
+                _soundWhenPercentageWasChanged = value;
                 OnPropertyChanged("SoundWhenPercentageWasChangedNotification");
+            }
+        }
+        public bool NotificationAfterBought
+        {
+            get { return this._notificationAfterBought; }
+            set
+            {
+                _notificationAfterBought = value;
+                OnPropertyChanged("NotificationAfterBought");
+            }
+        }
+        public bool NotificationAfterSold
+        {
+            get { return this._notificationAfterSold; }
+            set
+            {
+                _notificationAfterSold = value;
+                OnPropertyChanged("NotificationAfterSold");
+            }
+        }
+        public bool NotificationAfterSendReports
+        {
+            get { return this._notificationAfterReports; }
+            set
+            {
+                _notificationAfterReports = value;
+                OnPropertyChanged("NotificationAfterSendReports");
+            }
+        }
+        public bool NotificationAfterProvisionChanged
+        {
+            get { return this._notificationAfterProvisionChanged; }
+            set
+            {
+                _notificationAfterProvisionChanged = value;
+                OnPropertyChanged("NotificationAfterProvisionChanged");
             }
         }
 

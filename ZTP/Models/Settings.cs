@@ -20,6 +20,10 @@ namespace ZTP.Models
         public bool SoundWhenActionWasBought { get; set; }
         public bool SoundWhenPercentageWasChanged { get; set; }
         public bool SoundWhenEmailWasSend { get; set; }
+        public bool NotificationAfterBought { get; set; }
+        public bool NotificationAfterSold { get; set; }
+        public bool NotificationAfterSendReport { get; set; }
+        public bool NotificationAfterProvisionChanged { get; set; }
         public bool SummaryReport { get; set; }
         public bool SingleReporsts { get; set; }
         public string Email { get; set; }

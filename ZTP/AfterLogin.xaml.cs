@@ -122,5 +122,69 @@ namespace ZTP
                 }
             }
         }
+
+        private void SwitchNotificationsAfterBought_Click(object sender, RoutedEventArgs e)
+        {
+            ToggleSwitch toogleSwitch = sender as ToggleSwitch;
+            if (toogleSwitch != null)
+            {
+                if (toogleSwitch.IsChecked == true)
+                {
+                    settingsController.ToggleUpdate(true, "NotificationAfterBought");
+                }
+                else
+                {
+                    settingsController.ToggleUpdate(false, "NotificationAfterBought");
+                }
+            }
+        }
+
+        private void SwitchNotificationsAfterSold_Click(object sender, RoutedEventArgs e)
+        {
+            ToggleSwitch toogleSwitch = sender as ToggleSwitch;
+            if (toogleSwitch != null)
+            {
+                if (toogleSwitch.IsChecked == true)
+                {
+                    settingsController.ToggleUpdate(true, "NotificationAfterSold");
+                }
+                else
+                {
+                    settingsController.ToggleUpdate(false, "NotificationAfterSold");
+                }
+            }
+        }
+
+        private void SwitchNotificationsAfterSendReport_Click(object sender, RoutedEventArgs e)
+        {
+            ToggleSwitch toogleSwitch = sender as ToggleSwitch;
+            if (toogleSwitch != null)
+            {
+                if (toogleSwitch.IsChecked == true)
+                {
+                    settingsController.ToggleUpdate(true, "NotificationAfterSendReport");
+                }
+                else
+                {
+                    settingsController.ToggleUpdate(false, "NotificationAfterSendReport");
+                }
+            }
+        }
+
+        private void SwitchNotificationsAfterProvisionWasChanged_Click(object sender, RoutedEventArgs e)
+        {
+            ToggleSwitch toogleSwitch = sender as ToggleSwitch;
+            if (toogleSwitch != null)
+            {
+                if (toogleSwitch.IsChecked == true)
+                {
+                    settingsController.ToggleUpdate(true, "NotificationAfterProvisionChanged");
+                }
+                else
+                {
+                    settingsController.ToggleUpdate(false, "NotificationAfterProvisionChanged");
+                }
+            }
+        }
     }
 }
