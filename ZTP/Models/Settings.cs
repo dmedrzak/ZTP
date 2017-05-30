@@ -13,6 +13,15 @@ namespace ZTP.Models
         [Key]
         [ForeignKey("User")]
         public int Id { get; set; }
+
+        public int UpdateEveryMin { get; set; }
+        public bool isUpdateEveryOn { get; set; }
+        public bool SoundWhenActionWasSold { get; set; }
+        public bool SoundWhenActionWasBought { get; set; }
+        public bool SoundWhenPercentageWasChanged { get; set; }
+        public bool SoundWhenEmailWasSend { get; set; }
+        public bool SummaryReport { get; set; }
+        public bool SingleReporsts { get; set; }
         public string Email { get; set; }
 
         public virtual User User { get; set; }

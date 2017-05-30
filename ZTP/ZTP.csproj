@@ -69,14 +69,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AfterLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="AfterLogin.xaml.cs">
+      <DependentUpon>AfterLogin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\CurrentLoggedUser.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
+    <Compile Include="Controllers\ValidatorController.cs" />
+    <Compile Include="Controllers\WriteUserToXml.cs" />
     <Compile Include="dbContext.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -96,10 +109,17 @@
     <Compile Include="Migrations\201705231248503_User, Settings, VirtualWaller Models Added.Designer.cs">
       <DependentUpon>201705231248503_User, Settings, VirtualWaller Models Added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705292146480_Settings model changed.cs" />
+    <Compile Include="Migrations\201705292146480_Settings model changed.Designer.cs">
+      <DependentUpon>201705292146480_Settings model changed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Error.cs" />
     <Compile Include="Models\Settings.cs" />
+    <Compile Include="Models\SettingsNotification.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\VirtualWallet.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -115,6 +135,9 @@
     </Compile>
     <EmbeddedResource Include="Migrations\201705231248503_User, Settings, VirtualWaller Models Added.resx">
       <DependentUpon>201705231248503_User, Settings, VirtualWaller Models Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705292146480_Settings model changed.resx">
+      <DependentUpon>201705292146480_Settings model changed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -141,6 +164,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\settings.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

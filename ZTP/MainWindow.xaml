@@ -9,13 +9,13 @@
         Title="MainWindow" Height="350" Width="600">
     <Grid Name="Main">
         <Grid Name="FirstPage">
-            <Controls:Tile x:Name="loginTyle" HorizontalAlignment="Left" VerticalAlignment="Top" Width="600" Height="163" Click="loginTyle_Click" Margin="0,0,-8,0">
+            <Controls:Tile Background="#a6ccfb" x:Name="loginTyle" HorizontalAlignment="Left" VerticalAlignment="Top" Width="600" Height="163" Click="loginTyle_Click" Margin="0,0,-8,0">
                 <Grid>
                     <Image  Source="Images/login.png" Margin="-174,0,174,0"/>
                     <Label x:Name="label" Foreground="White" Content="Login" HorizontalAlignment="Left" Margin="30,27,-117,0" VerticalAlignment="Top" Height="125" Width="249" FontSize="80"/>
                 </Grid>
             </Controls:Tile>
-            <Controls:Tile x:Name="registerTile" Background="DarkRed" HorizontalAlignment="Left" Margin="0,157,-8,0" VerticalAlignment="Top" Width="600" Height="162" Click="registerTile_Click">
+            <Controls:Tile x:Name="registerTile" Background="#a2abe1" HorizontalAlignment="Left" Margin="0,157,-8,0" VerticalAlignment="Top" Width="600" Height="162" Click="registerTile_Click">
                 <Grid>
                     <Image  Source="Images/AddUserWhite.png" Margin="-174,0,174,0"/>
                     <Label x:Name="registerLabl" Foreground="White" Content="Register" HorizontalAlignment="Left" Margin="32,27,-170,0" VerticalAlignment="Top" Height="125" Width="300" FontSize="80"/>
@@ -62,21 +62,26 @@
                     </Grid>
                     <Controls:ToggleSwitch  Height="40" Canvas.Left="205" Canvas.Top="85" Width="100" Foreground="White"/>
                     <Label Content="Remember me?" Canvas.Left="310" Canvas.Top="93" Foreground="White" Width="95"/>
+                    <Label Name="loginValidationLabel" Foreground="Red" Canvas.Left="425" Canvas.Top="19" Height="136" Width="154">
+                        <Label.Content>
+                            <AccessText TextWrapping="Wrap" Text="{Binding LoginErrorMsg, UpdateSourceTrigger=PropertyChanged}"/>
+                        </Label.Content>
+                    </Label>
                 </Canvas>
             </Controls:Flyout>
-            <Controls:Flyout Visibility="Collapsed" Header="REGISTER" Name="registerFlyOut" Position="Right" Width="600" Foreground="White" >
+            <Controls:Flyout Visibility="Hidden" Header="REGISTER" Name="registerFlyOut" Position="Right" Width="600" Foreground="White" >
                 <Controls:Flyout.Background>
                     <SolidColorBrush Color="Black" Opacity="0.9"></SolidColorBrush>
                 </Controls:Flyout.Background>
                 <Canvas Name="registerCanvas">
-                    <Grid Canvas.Left="205" Canvas.Top="8" Width="200" Height="40" Name="registerUserNameGrid">
-                        <TextBox  Width="200"  VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="txtRegisterUserName" Margin="0,7"/>
+                    <Grid Canvas.Left="205" Canvas.Top="8" Width="200" Height="40" Name="RegisterLoginGrid">
+                        <TextBox  Width="200"  VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="txtRegisterLogin" Margin="0,7"/>
                         <TextBlock IsHitTestVisible="False" Text="Enter login here" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="DarkGray">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="Visibility" Value="Collapsed"/>
                                     <Style.Triggers>
-                                        <DataTrigger Binding="{Binding Text, ElementName=txtRegisterUserName}" Value="">
+                                        <DataTrigger Binding="{Binding Text, ElementName=txtRegisterLogin}" Value="">
                                             <Setter Property="Visibility" Value="Visible"/>
                                         </DataTrigger>
                                     </Style.Triggers>
@@ -84,7 +89,7 @@
                             </TextBlock.Style>
                         </TextBlock>
                     </Grid>
-                    <Grid Canvas.Left="205" Canvas.Top="41" Width="200" Height="40" Name="registerPasswordGrid">
+                    <Grid Canvas.Left="205" Canvas.Top="38" Width="200" Height="40" Name="registerPasswordGrid">
                         <TextBox  Width="200"  VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="txtRegisterPassword" Margin="0,7"/>
                         <TextBlock IsHitTestVisible="False" Text="Enter password here" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="DarkGray">
                             <TextBlock.Style>
@@ -99,9 +104,9 @@
                             </TextBlock.Style>
                         </TextBlock>
                     </Grid>
-                    <Grid Canvas.Left="205" Canvas.Top="74" Width="200" Height="40" Name="registerConfirmPasswordGrid">
+                    <Grid Canvas.Left="205" Canvas.Top="68" Width="200" Height="40" Name="registerConfirmPassowrd">
                         <TextBox  Width="200"  VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="txtRegisterConfirmPassword" Margin="0,7"/>
-                        <TextBlock IsHitTestVisible="False" Text="Confirm password here" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="DarkGray">
+                        <TextBlock IsHitTestVisible="False" Text="Confirm password." VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="DarkGray">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -114,9 +119,14 @@
                             </TextBlock.Style>
                         </TextBlock>
                     </Grid>
-                    <Button Name="btnRegister" Content="Register" Canvas.Left="205" Canvas.Top="114" Width="200" Height="30" Foreground="White" Background="Purple" Click="btnLogin_Click"/>
+                    <Button Name="btnRegister" Content="Register" Canvas.Left="205" Canvas.Top="108" Width="200" Height="30" Foreground="White" Background="Purple" Click="btnRegister_Click"/>
+                    <Label Name="registerValidationLabel" Foreground="Red" Canvas.Left="422" Canvas.Top="19" Height="119" Width="143">
+                        <Label.Content>
+                            <AccessText TextWrapping="Wrap" Text="{Binding RegisterErrorMsg, UpdateSourceTrigger=PropertyChanged}"/>
+                        </Label.Content>
+                    </Label>
                 </Canvas>
-             </Controls:Flyout>
+            </Controls:Flyout>
         </Grid>
 
     </Grid>
